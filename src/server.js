@@ -52,7 +52,8 @@ app.put("/book", (request, response) => {
         bookList[index].genre = request.body.genre
         responseMessage = {
             message: "Author and Genre have been updated.",
-            book: bookList[index]
+            book: bookList[index],
+            books: bookList
         }
     } else {
         responseMessage = {
@@ -73,8 +74,6 @@ app.delete("/book", (request, response)=>{
 
     }
     const index = bookList.findIndex(findBook)
-
-    console.log(index)
 
     bookList.splice(index, 1)
 
